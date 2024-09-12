@@ -1,0 +1,108 @@
+@import "../../../../styles/mixins";
+
+.main-navbar {
+  z-index: 99;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  .navbar {
+    border-bottom: 2px solid #575757;
+    .logo {
+      width: 8.5rem;
+      height: auto;
+    }
+    .navbar-item-links {
+      @include MarPad();
+      .nav-item {
+        position: relative;
+        font-weight: var(--fw-6);
+        font-size: 0.73rem;
+        letter-spacing: 0.12188rem;
+        text-transform: uppercase;
+        margin-left: 2.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        a {
+          color: var(--white);
+          transition: 0.3s all ease-in-out;
+          font-weight: var(--fw-5);
+          display: block;
+        }
+        i {
+          margin-left: 0.3rem;
+          color: var(--white);
+          font-size: 14px;
+          transition: 0.3s all ease-in-out;
+        }
+        .hidden {
+          display: none;
+        }
+        &:hover {
+          a,
+          i {
+            color: var(--primary);
+          }
+          .show {
+            display: none;
+          }
+          .hidden {
+            display: block;
+          }
+        }
+        &.active {
+          a,
+          i {
+            color: var(--primary);
+          }
+          .show {
+            display: none;
+          }
+          .hidden {
+            display: block;
+          }
+        }
+      }
+      @media screen and (min-width: 991px) {
+        .nav-item {
+          height: 70px;
+        }
+      }
+    }
+  }
+  .mega-menu {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    position: absolute;
+    background-color: var(--bg-2);
+    width: 100%;
+    padding: 4rem 0 2rem 0;
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    &.hidden {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    .megamenu-content {
+      h1,
+      p {
+        color: var(--white);
+      }
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 300;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,181 @@
+<header class="main-navbar">
+    <div class="app-container">
+        <div class="navbar d-flex align-items-center justify-content-between p-0">
+            <div class="logo">
+                <img [src]="'assets/images/mega-menu/logo-03.png'" width="100%" height="100%" alt="Logo">
+            </div>
+            <ul class="navbar-item-links d-flex align-items-center">
+                <li class="nav-item" [ngClass]="{'active': isActive('aboutus')}" (mouseenter)="showMegaMenu('aboutus')"
+                    (mouseleave)="scheduleHideMenu()">
+                    <!-- <p>isActive: {{ isActive('aboutus') }}</p> -->
+                    <a href="#">About Us</a>
+                    <div class="show"><i class="fa-solid fa-angle-down"></i></div>
+                    <div class="hidden"><i class="fa-solid fa-minus"></i></div>
+                </li>
+                <li class="nav-item" [ngClass]="{'active': isActive('services')}"
+                    (mouseenter)="showMegaMenu('services')" (mouseleave)="scheduleHideMenu()">
+                    <!-- <p>isActive: {{ isActive('services') }}</p> -->
+                    <a href="#">Service</a>
+                    <div class="show"><i class="fa-solid fa-angle-down"></i></div>
+                    <div class="hidden"><i class="fa-solid fa-minus"></i></div>
+                </li>
+                <li class="nav-item" [ngClass]="{'active': isActive('resources')}"
+                    (mouseenter)="showMegaMenu('resources')" (mouseleave)="scheduleHideMenu()">
+                    <!-- <p>isActive: {{ isActive('resources') }}</p> -->
+                    <a href="#">Resources</a>
+                    <div class="show"><i class="fa-solid fa-angle-down"></i></div>
+                    <div class="hidden"><i class="fa-solid fa-minus"></i></div>
+                </li>
+                <li class="nav-item" [ngClass]="{'active': isActive('blogs')}" (mouseenter)="showMegaMenu('blogs')"
+                    (mouseleave)="scheduleHideMenu()">
+                    <!-- <p>isActive: {{ isActive('blogs') }}</p> -->
+                    <a href="#">Blogs</a>
+                    <div class="show"><i class="fa-solid fa-angle-down"></i></div>
+                    <div class="hidden"><i class="fa-solid fa-minus"></i></div>
+                </li>
+                <li class="nav-item" [ngClass]="{'active': isActive('contact')}" (mouseenter)="showMegaMenu('contact')"
+                    (mouseleave)="scheduleHideMenu()">
+                    <!-- <p>isActive: {{ isActive('contact') }}</p> -->
+                    <a href="#">Contact Us</a>
+                    <div class="show"><i class="fa-solid fa-angle-down"></i></div>
+                    <div class="hidden"><i class="fa-solid fa-minus"></i></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Mega Menus -->
+    <div class="mega-menu" [ngClass]="{'visible': isActive('aboutus'), 'hidden': !isActive('aboutus')}"
+        (mouseenter)="cancelHideMenu()" (mouseleave)="scheduleHideMenu()">
+        <div class="app-container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="megamenu-content">
+                        <h1 class="mb-4">About Us</h1>
+                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto soluta et
+                            ipsam eum
+                            inventore. Repudiandae pariatur assumenda itaque omnis eos error debitis temporibus
+                            perspiciatis veniam?</p>
+                        <button class="btn-overlay">
+                            <span>Overview</span>
+                            <i class="fa-solid fa-angles-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="megamenu-content-wrapper">
+                        <div class="megamenu-tabs">
+                            <!-- <ul class="tab-header-list">
+                                <li class="tab-item active">About Us</li>
+                                <li class="tab-item">News & blogs</li>
+                            </ul>
+                            <div class="tab-content-wrapper">
+                                <div class="tab-panel show"></div>
+                            </div> -->
+                            <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+                                <li [ngbNavItem]="1">
+                                    <button ngbNavLink>One</button>
+                                    <ng-template ngbNavContent>
+                                        <p>
+                                            Raw denim you probably haven't heard of them jean shorts Austin...
+                                        </p>
+                                    </ng-template>
+                                </li>
+                                <li [ngbNavItem]="2">
+                                    <button ngbNavLink>Two</button>
+                                    <ng-template ngbNavContent>
+                                        <p>
+                                            Exercitation +1 labore velit, blog sartorial PBR leggings next level wes
+                                            anderson...
+                                        </p>
+                                    </ng-template>
+                                </li>
+                                <li [ngbNavItem]="3">
+                                    <button ngbNavLink>Three</button>
+                                    <ng-template ngbNavContent>
+                                        <p>
+                                            Sed commodo, leo at suscipit dictum, quam est porttitor sapien...
+                                        </p>
+                                    </ng-template>
+                                </li>
+                            </ul>
+
+                            <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+                            <pre>Active: {{ active }}</pre>
+
+
+                            <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+                            <pre>Active: {{ active }}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mega-menu" [ngClass]="{'visible': isActive('services'), 'hidden': !isActive('services')}"
+        (mouseenter)="cancelHideMenu()" (mouseleave)="scheduleHideMenu()">
+        <div class="app-container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="megamenu-content">
+                        <h1>Services</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto soluta et ipsam eum
+                            inventore. Repudiandae pariatur assumenda itaque omnis eos error debitis temporibus
+                            perspiciatis veniam?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mega-menu" [ngClass]="{'visible': isActive('resources'), 'hidden': !isActive('resources')}"
+        (mouseenter)="cancelHideMenu()" (mouseleave)="scheduleHideMenu()">
+        <div class="app-container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="megamenu-content">
+                        <h1>Resources</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto soluta et ipsam eum
+                            inventore. Repudiandae pariatur assumenda itaque omnis eos error debitis temporibus
+                            perspiciatis veniam?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mega-menu" [ngClass]="{'visible': isActive('blogs'), 'hidden': !isActive('blogs')}"
+        (mouseenter)="cancelHideMenu()" (mouseleave)="scheduleHideMenu()">
+        <div class="app-container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="megamenu-content">
+                        <h1>Blogs</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto soluta et ipsam eum
+                            inventore. Repudiandae pariatur assumenda itaque omnis eos error debitis temporibus
+                            perspiciatis veniam?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mega-menu" [ngClass]="{'visible': isActive('contact'), 'hidden': !isActive('contact')}"
+        (mouseenter)="cancelHideMenu()" (mouseleave)="scheduleHideMenu()">
+        <div class="app-container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="megamenu-content">
+                        <h1>Contact Us</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto soluta et ipsam eum
+                            inventore. Repudiandae pariatur assumenda itaque omnis eos error debitis temporibus
+                            perspiciatis veniam?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
