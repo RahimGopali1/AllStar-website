@@ -1,0 +1,122 @@
+.homepage-banner {
+  padding: 5rem 0 4rem 0;
+  height: 37rem;
+  .home-banner-wrapper {
+    .banner-text {
+      h1 {
+        color: var(--white);
+        font-size: 46px;
+        font-weight: var(--fw-7);
+        margin-bottom: 4rem;
+        span {
+          background: var(--grad-1); // gradient colors
+          -webkit-background-clip: text;
+          color: transparent;
+        }
+      }
+    }
+    .banner-img-wrapper {
+      position: relative;
+      width: 100%;
+      .banner-img {
+        padding: 0 2.5rem;
+      }
+      .counter {
+        position: absolute;
+        padding: 0.8rem;
+        border-radius: 10px 10px 10px 10px;
+        width: 15rem;
+        opacity: 0; // Initially hidden for animation
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        h1 {
+          font-size: 42px;
+          font-weight: var(--fw-7);
+          color: var(--white);
+          margin: 0;
+        }
+        h5 {
+          font-size: 20px;
+          color: var(--white);
+          margin: 0;
+        }
+        &.top-counter {
+          top: -50px;
+          text-align: center;
+          background-image: var(--grad-2);
+          animation-name: slide-down;
+        }
+        &.bottom-counter {
+          bottom: -50px;
+          right: 0;
+          text-align: center;
+          background-image: var(--grad-3);
+          animation-name: slide-up;
+        }
+        @keyframes slide-down {
+          from {
+            opacity: 0;
+            transform: translateY(-50px); // Start above the screen
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0); // End in original position
+          }
+        }
+
+        @keyframes slide-up {
+          from {
+            opacity: 0;
+            transform: translateY(50px); // Start below the screen
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0); // End in original position
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .home-banner-wrapper {
+      .banner-img-wrapper {
+        .banner-img {
+          padding: 1rem;
+        }
+      }
+      .banner-text {
+        h1 {
+          font-size: 36px;
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 992px) {
+    background-image: none;
+    height: auto;
+    .home-banner-wrapper {
+      .banner-img-wrapper {
+        margin-bottom: 3rem;
+        .counter {
+          position: absolute;
+          padding: 0.8rem;
+          border-radius: 10px 10px 10px 10px;
+          width: 12rem;
+          h1 {
+            font-size: 28px;
+          }
+          h5 {
+            font-size: 18px;
+          }
+          &.top-counter {
+            top: -10px;
+          }
+          &.bottom-counter {
+            bottom: -10px;
+          }
+        }
+      }
+    }
+  }
+}

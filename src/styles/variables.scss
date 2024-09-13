@@ -1,14 +1,4 @@
 :root {
-  // global colors
-  --bg-1: #0c0c0c;
-  --bg-2: #360d00;
-  --blur-1: rgba(255, 116, 74, 0.5);
-  --white: #fff;
-
-  --primary: #fe7f5a;
-  
-  // global colors end
-
   //font-weight;
   --fw-2: 200;
   --fw-3: 300;
@@ -17,7 +7,22 @@
   --fw-6: 600;
   --fw-7: 700;
   --fw-8: 800;
+  --fw-9: 900;
   //font-weight end;
 
-  --gray: #738693: 
+  // global colors
+  --bg-1: #0c0c0c;
+  --bg-2: #360d00;
+  --blur-1: rgba(255, 116, 74, 0.5);
+  --white: #fff;
+
+  --primary: #fe7f5a;
+
+  // global colors end
+
+  // gradients
+  --grad-1: linear-gradient(to right, #ff9747, #fd6d6a);
+  --grad-2: linear-gradient(180deg, transparent 0%, #ff9747 100%);
+  --grad-3: linear-gradient(180deg, transparent 0%, #fd6d6a 100%);
+  // gradients end
 }

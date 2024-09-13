@@ -3,7 +3,7 @@
 .main-navbar {
   z-index: 99;
   // transition: background-color 0.3s ease;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
@@ -146,6 +146,7 @@
     transition: 0.3s all ease-in-out;
     transform: translateY(-100%);
     background: var(--bg-2);
+    backdrop-filter: blur(8px);
     // display: none;
     &.visible {
       // display: block;
@@ -271,6 +272,7 @@
                     }
                     p {
                       font-size: 13px;
+                      margin-bottom: 0;
                     }
                   }
                 }
@@ -372,6 +374,41 @@
 
           .hidden {
             display: inline-block; // Ensure it's displayed for the hidden state
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .mega-menu {
+      .megamenu-wrapper {
+        .megamenu-content-wrapper {
+          .megamenu-tabs {
+            .tab-content {
+              .megamenu-hero {
+                height: 24rem;
+                .megamenu-card {
+                  .card-title {
+                    font-size: 20px;
+                  }
+                  .card-desc {
+                    p {
+                      line-height: 18px;
+                    }
+                  }
+                }
+                .megamenu-list {
+                  ul {
+                    li {
+                      margin-bottom: 0.5rem;
+                      p {
+                        line-height: 16px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }

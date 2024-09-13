@@ -6,39 +6,39 @@
             </div>
             <ul class="navbar-item-links d-flex align-items-center">
                 <li class="nav-item">
-                    <a href="#">Home</a>
+                    <a>Home</a>
                 </li>
                 <li class="nav-item" [ngClass]="{'active': isActive('aboutus')}" (mouseenter)="showMegaMenu('aboutus')"
                     (mouseleave)="scheduleHideMenu()">
                     <!-- <p>isActive: {{ isActive('aboutus') }}</p> -->
-                    <a href="#">About Us</a>
+                    <a>About Us</a>
                     <div class="show"><i class="fa-solid fa-angle-down"></i></div>
                     <div class="hidden"><i class="fa-solid fa-minus"></i></div>
                 </li>
                 <li class="nav-item" [ngClass]="{'active': isActive('services')}"
                     (mouseenter)="showMegaMenu('services')" (mouseleave)="scheduleHideMenu()">
                     <!-- <p>isActive: {{ isActive('services') }}</p> -->
-                    <a href="#">Service</a>
+                    <a>Service</a>
                     <div class="show"><i class="fa-solid fa-angle-down"></i></div>
                     <div class="hidden"><i class="fa-solid fa-minus"></i></div>
                 </li>
                 <li class="nav-item" [ngClass]="{'active': isActive('resources')}"
                     (mouseenter)="showMegaMenu('resources')" (mouseleave)="scheduleHideMenu()">
                     <!-- <p>isActive: {{ isActive('resources') }}</p> -->
-                    <a href="#">Resources</a>
+                    <a>Resources</a>
                     <div class="show"><i class="fa-solid fa-angle-down"></i></div>
                     <div class="hidden"><i class="fa-solid fa-minus"></i></div>
                 </li>
                 <!-- <li class="nav-item" [ngClass]="{'active': isActive('blogs')}" (mouseenter)="showMegaMenu('blogs')"
                     (mouseleave)="scheduleHideMenu()">
-                    <a href="#">Blogs</a>
+                    <a >Blogs</a>
                     <div class="show"><i class="fa-solid fa-angle-down"></i></div>
                     <div class="hidden"><i class="fa-solid fa-minus"></i></div>
                 </li> -->
                 <li class="nav-item" [ngClass]="{'active': isActive('contact')}" (mouseenter)="showMegaMenu('contact')"
                     (mouseleave)="scheduleHideMenu()">
                     <!-- <p>isActive: {{ isActive('contact') }}</p> -->
-                    <a href="#">Contact Us</a>
+                    <a>Contact Us</a>
                     <div class="show"><i class="fa-solid fa-angle-down"></i></div>
                     <div class="hidden"><i class="fa-solid fa-minus"></i></div>
                 </li>
@@ -67,7 +67,7 @@
                                 inventore. Repudiandae pariatur assumenda itaque omnis eos error debitis temporibus
                                 perspiciatis veniam?</p>
                             <button class="btn-overlay">
-                                <span>Overview</span>
+                                <span>Our Portfolio</span>
                                 <i class="fa-solid fa-angles-right"></i>
                             </button>
                         </div>
@@ -97,7 +97,7 @@
                                                                     mollitia.
                                                                     Numquam
                                                                     eum consequatur ipsum!</p>
-                                                                <a href="#" class="read-more">Who we are <i
+                                                                <a class="read-more">Who we are <i
                                                                         class="fa-solid fa-arrow-right"></i></a>
                                                             </div>
                                                         </div>
@@ -602,13 +602,13 @@
             <ul class="mobile-menu-links d-flex flex-column">
                 <li class="nav-item">
                     <div class="nav-link">
-                        <a href="#">Home</a>
+                        <a>Home</a>
                         <div class="icon-wrapper"><i class="fa-solid fa-arrow-right"></i></div>
                     </div>
                 </li>
                 <li class="nav-item">
                     <div class="nav-link" (click)="toggleDropdown('aboutUs')">
-                        <a href="#">About Us</a>
+                        <a>About Us</a>
                         <div class="show" *ngIf="openDropdown !== 'aboutUs'">
                             <i class="fa-solid fa-angle-down"></i>
                         </div>
@@ -617,15 +617,15 @@
                         </div>
                     </div>
                     <ul class="dropdownmenu" [ngClass]="{'open': openDropdown === 'aboutUs'}">
-                        <li><a href="#">Who we are<i class="fa-solid fa-arrow-right"></i></a></li>
-                        <li><a href="#">How we work<i class="fa-solid fa-arrow-right"></i></a></li>
-                        <li><a href="#">Team vision<i class="fa-solid fa-arrow-right"></i></a></li>
+                        <li><a>Who we are<i class="fa-solid fa-arrow-right"></i></a></li>
+                        <li><a>How we work<i class="fa-solid fa-arrow-right"></i></a></li>
+                        <li><a>Team vision<i class="fa-solid fa-arrow-right"></i></a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item">
                     <div class="nav-link" (click)="toggleDropdown('services')">
-                        <a href="#">Services</a>
+                        <a>Services</a>
                         <div class="show" *ngIf="openDropdown !== 'services'">
                             <i class="fa-solid fa-angle-down"></i>
                         </div>
@@ -634,15 +634,15 @@
                         </div>
                     </div>
                     <ul class="dropdownmenu" [ngClass]="{'open': openDropdown === 'services'}">
-                        <li><a href="#">Who we are<i class="fa-solid fa-arrow-right"></i></a></li>
-                        <li><a href="#">How we work<i class="fa-solid fa-arrow-right"></i></a></li>
-                        <li><a href="#">Team vision<i class="fa-solid fa-arrow-right"></i></a></li>
+                        <li><a>Who we are<i class="fa-solid fa-arrow-right"></i></a></li>
+                        <li><a>How we work<i class="fa-solid fa-arrow-right"></i></a></li>
+                        <li><a>Team vision<i class="fa-solid fa-arrow-right"></i></a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item">
                     <div class="nav-link" (click)="toggleDropdown('resources')">
-                        <a href="#">Resources</a>
+                        <a>Resources</a>
                         <div class="show" *ngIf="openDropdown !== 'resources'">
                             <i class="fa-solid fa-angle-down"></i>
                         </div>
@@ -651,15 +651,15 @@
                         </div>
                     </div>
                     <ul class="dropdownmenu" [ngClass]="{'open': openDropdown === 'resources'}">
-                        <li><a href="#">Who we are<i class="fa-solid fa-arrow-right"></i></a></li>
-                        <li><a href="#">How we work<i class="fa-solid fa-arrow-right"></i></a></li>
-                        <li><a href="#">Team vision<i class="fa-solid fa-arrow-right"></i></a></li>
+                        <li><a>Who we are<i class="fa-solid fa-arrow-right"></i></a></li>
+                        <li><a>How we work<i class="fa-solid fa-arrow-right"></i></a></li>
+                        <li><a>Team vision<i class="fa-solid fa-arrow-right"></i></a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item">
                     <div class="nav-link">
-                        <a href="#">Contact Us</a>
+                        <a>Contact Us</a>
                         <div class="icon-wrapper"><i class="fa-solid fa-arrow-right"></i></div>
                     </div>
                 </li>
