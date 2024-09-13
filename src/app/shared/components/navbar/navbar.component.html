@@ -5,6 +5,9 @@
                 <img [src]="'assets/images/mega-menu/logo-03.png'" width="100%" height="100%" alt="Logo">
             </div>
             <ul class="navbar-item-links d-flex align-items-center">
+                <li class="nav-item">
+                    <a href="#">Home</a>
+                </li>
                 <li class="nav-item" [ngClass]="{'active': isActive('aboutus')}" (mouseenter)="showMegaMenu('aboutus')"
                     (mouseleave)="scheduleHideMenu()">
                     <!-- <p>isActive: {{ isActive('aboutus') }}</p> -->
@@ -26,13 +29,12 @@
                     <div class="show"><i class="fa-solid fa-angle-down"></i></div>
                     <div class="hidden"><i class="fa-solid fa-minus"></i></div>
                 </li>
-                <li class="nav-item" [ngClass]="{'active': isActive('blogs')}" (mouseenter)="showMegaMenu('blogs')"
+                <!-- <li class="nav-item" [ngClass]="{'active': isActive('blogs')}" (mouseenter)="showMegaMenu('blogs')"
                     (mouseleave)="scheduleHideMenu()">
-                    <!-- <p>isActive: {{ isActive('blogs') }}</p> -->
                     <a href="#">Blogs</a>
                     <div class="show"><i class="fa-solid fa-angle-down"></i></div>
                     <div class="hidden"><i class="fa-solid fa-minus"></i></div>
-                </li>
+                </li> -->
                 <li class="nav-item" [ngClass]="{'active': isActive('contact')}" (mouseenter)="showMegaMenu('contact')"
                     (mouseleave)="scheduleHideMenu()">
                     <!-- <p>isActive: {{ isActive('contact') }}</p> -->
@@ -41,6 +43,12 @@
                     <div class="hidden"><i class="fa-solid fa-minus"></i></div>
                 </li>
             </ul>
+            <div class="toggle-menu" (click)="toggleMobileMenu()">
+                <!-- <img [src]="'assets/images/mega-menu/burger-menu.svg'" width="100%" height="100%" alt="Logo"> -->
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </div>
 
@@ -48,66 +56,101 @@
     <div class="mega-menu" [ngClass]="{'visible': isActive('aboutus'), 'hidden': !isActive('aboutus')}"
         (mouseenter)="cancelHideMenu()" (mouseleave)="scheduleHideMenu()">
         <div class="app-container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="megamenu-content">
-                        <h1 class="mb-4">About Us</h1>
-                        <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto soluta et
-                            ipsam eum
-                            inventore. Repudiandae pariatur assumenda itaque omnis eos error debitis temporibus
-                            perspiciatis veniam?</p>
-                        <button class="btn-overlay">
-                            <span>Overview</span>
-                            <i class="fa-solid fa-angles-right"></i>
-                        </button>
+            <div class="megamenu-wrapper">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="megamenu-content">
+                            <h1 class="mb-4">About Us</h1>
+                            <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto soluta
+                                et
+                                ipsam eum
+                                inventore. Repudiandae pariatur assumenda itaque omnis eos error debitis temporibus
+                                perspiciatis veniam?</p>
+                            <button class="btn-overlay">
+                                <span>Overview</span>
+                                <i class="fa-solid fa-angles-right"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-9">
-                    <div class="megamenu-content-wrapper">
-                        <div class="megamenu-tabs">
-                            <!-- <ul class="tab-header-list">
-                                <li class="tab-item active">About Us</li>
-                                <li class="tab-item">News & blogs</li>
-                            </ul>
-                            <div class="tab-content-wrapper">
-                                <div class="tab-panel show"></div>
-                            </div> -->
-                            <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
-                                <li [ngbNavItem]="1">
-                                    <button ngbNavLink>One</button>
-                                    <ng-template ngbNavContent>
-                                        <p>
-                                            Raw denim you probably haven't heard of them jean shorts Austin...
-                                        </p>
-                                    </ng-template>
-                                </li>
-                                <li [ngbNavItem]="2">
-                                    <button ngbNavLink>Two</button>
-                                    <ng-template ngbNavContent>
-                                        <p>
-                                            Exercitation +1 labore velit, blog sartorial PBR leggings next level wes
-                                            anderson...
-                                        </p>
-                                    </ng-template>
-                                </li>
-                                <li [ngbNavItem]="3">
-                                    <button ngbNavLink>Three</button>
-                                    <ng-template ngbNavContent>
-                                        <p>
-                                            Sed commodo, leo at suscipit dictum, quam est porttitor sapien...
-                                        </p>
-                                    </ng-template>
-                                </li>
-                            </ul>
-
-                            <div [ngbNavOutlet]="nav" class="mt-2"></div>
-
-                            <pre>Active: {{ active }}</pre>
-
-
-                            <div [ngbNavOutlet]="nav" class="mt-2"></div>
-
-                            <pre>Active: {{ active }}</pre>
+                    <div class="col-md-9">
+                        <div class="megamenu-content-wrapper">
+                            <div class="megamenu-tabs">
+                                <ul ngbNav #nav1="ngbNav" [(activeId)]="activeTab1" class="nav-tabs">
+                                    <li [ngbNavItem]="1">
+                                        <button ngbNavLink>About Us</button>
+                                        <ng-template ngbNavContent>
+                                            <div class="megamenu-hero">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="megamenu-card">
+                                                            <h2 class="card-title hover-title mb-3">Lorem ipsum dolor
+                                                                sit
+                                                                amet.</h2>
+                                                            <div class="card-image hover-img mb-2">
+                                                                <img [src]="'assets/images/mega-menu/megamenu-1.png'"
+                                                                    width="100%" height="100%" alt="no image">
+                                                            </div>
+                                                            <div class="card-desc">
+                                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing
+                                                                    elit. Ex,
+                                                                    sequi iusto. Cupiditate explicabo itaque amet
+                                                                    mollitia.
+                                                                    Numquam
+                                                                    eum consequatur ipsum!</p>
+                                                                <a href="#" class="read-more">Who we are <i
+                                                                        class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="megamenu-card">
+                                                            <h2 class="card-title hover-title mb-3">Lorem ipsum dolor
+                                                                sit
+                                                                amet.</h2>
+                                                            <div class="card-image hover-img mb-2">
+                                                                <img [src]="'assets/images/mega-menu/megamenu-1.png'"
+                                                                    width="100%" height="100%" alt="no image">
+                                                            </div>
+                                                            <div class="card-desc">
+                                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing
+                                                                    elit. Ex,
+                                                                    sequi iusto. Cupiditate explicabo itaque amet
+                                                                    mollitia.
+                                                                    Numquam
+                                                                    eum consequatur ipsum!</p>
+                                                                <a href="#" class="read-more">How we are <i
+                                                                        class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="megamenu-card border-0">
+                                                            <h2 class="card-title hover-title mb-3">Lorem ipsum dolor
+                                                                sit
+                                                                amet.</h2>
+                                                            <div class="card-image hover-img mb-2">
+                                                                <img [src]="'assets/images/mega-menu/megamenu-1.png'"
+                                                                    width="100%" height="100%" alt="no image">
+                                                            </div>
+                                                            <div class="card-desc">
+                                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing
+                                                                    elit. Ex,
+                                                                    sequi iusto. Cupiditate explicabo itaque amet
+                                                                    mollitia.
+                                                                    Numquam
+                                                                    eum consequatur ipsum!</p>
+                                                                <a href="#" class="read-more">Team Vision <i
+                                                                        class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-template>
+                                    </li>
+                                </ul>
+                                <div [ngbNavOutlet]="nav1" class="mt-2"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -118,13 +161,210 @@
     <div class="mega-menu" [ngClass]="{'visible': isActive('services'), 'hidden': !isActive('services')}"
         (mouseenter)="cancelHideMenu()" (mouseleave)="scheduleHideMenu()">
         <div class="app-container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="megamenu-content">
-                        <h1>Services</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto soluta et ipsam eum
-                            inventore. Repudiandae pariatur assumenda itaque omnis eos error debitis temporibus
-                            perspiciatis veniam?</p>
+            <div class="megamenu-wrapper">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="megamenu-content">
+                            <h1 class="mb-4">Services</h1>
+                            <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto soluta
+                                et
+                                ipsam eum
+                                inventore. Repudiandae pariatur assumenda itaque omnis eos error debitis temporibus
+                                perspiciatis veniam?</p>
+                            <button class="btn-overlay">
+                                <span>Overview</span>
+                                <i class="fa-solid fa-angles-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="megamenu-content-wrapper">
+                            <div class="megamenu-tabs">
+                                <ul ngbNav #nav2="ngbNav" [(activeId)]="activeTab2" class="nav-tabs">
+                                    <li [ngbNavItem]="1">
+                                        <button ngbNavLink>It & Web Development</button>
+                                        <ng-template ngbNavContent>
+                                            <div class="megamenu-hero">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="megamenu-card">
+                                                            <h2 class="card-title hover-title mb-3">Lorem ipsum dolor
+                                                                sit
+                                                                amet.</h2>
+                                                            <div class="card-image hover-img mb-2">
+                                                                <img [src]="'assets/images/mega-menu/megamenu-1.png'"
+                                                                    width="100%" height="100%" alt="no image">
+                                                            </div>
+                                                            <div class="card-desc">
+                                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing
+                                                                    elit. Ex,
+                                                                    sequi iusto. Cupiditate explicabo itaque amet
+                                                                    mollitia.
+                                                                    Numquam
+                                                                    eum consequatur ipsum!</p>
+                                                                <a href="#" class="read-more">Read More <i
+                                                                        class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="megamenu-list">
+                                                            <ul>
+                                                                <li>
+                                                                    <h6 class="list-title hover-title">Lorem ipsum
+                                                                        dolor.</h6>
+                                                                    <p>Lorem ipsum dolor sit amet consectetur,
+                                                                        adipisicing elit. Impedit!</p>
+                                                                </li>
+                                                                <li>
+                                                                    <h6 class="list-title hover-title">Lorem ipsum
+                                                                        dolor.</h6>
+                                                                    <p>Lorem ipsum dolor sit amet consectetur,
+                                                                        adipisicing elit. Impedit!</p>
+                                                                </li>
+                                                                <li>
+                                                                    <h6 class="list-title hover-title">Lorem ipsum
+                                                                        dolor.</h6>
+                                                                    <p>Lorem ipsum dolor sit amet consectetur,
+                                                                        adipisicing elit. Impedit!</p>
+                                                                </li>
+                                                                <li>
+                                                                    <h6 class="list-title hover-title">Lorem ipsum
+                                                                        dolor.</h6>
+                                                                    <p>Lorem ipsum dolor sit amet consectetur,
+                                                                        adipisicing elit. Impedit!</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="megamenu-list">
+                                                            <ul>
+                                                                <li>
+                                                                    <h6 class="list-title hover-title">Lorem ipsum
+                                                                        dolor.</h6>
+                                                                    <p>Lorem ipsum dolor sit amet consectetur,
+                                                                        adipisicing elit. Impedit!</p>
+                                                                </li>
+                                                                <li>
+                                                                    <h6 class="list-title hover-title">Lorem ipsum
+                                                                        dolor.</h6>
+                                                                    <p>Lorem ipsum dolor sit amet consectetur,
+                                                                        adipisicing elit. Impedit!</p>
+                                                                </li>
+                                                                <li>
+                                                                    <h6 class="list-title hover-title">Lorem ipsum
+                                                                        dolor.</h6>
+                                                                    <p>Lorem ipsum dolor sit amet consectetur,
+                                                                        adipisicing elit. Impedit!</p>
+                                                                </li>
+                                                                <li>
+                                                                    <h6 class="list-title hover-title">Lorem ipsum
+                                                                        dolor.</h6>
+                                                                    <p>Lorem ipsum dolor sit amet consectetur,
+                                                                        adipisicing elit. Impedit!</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-template>
+                                    </li>
+                                    <li [ngbNavItem]="2">
+                                        <button ngbNavLink>Digital Marketing</button>
+                                        <ng-template ngbNavContent>
+                                            <div class="megamenu-hero">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="megamenu-card">
+                                                            <h2 class="card-title hover-title mb-3">Lorem ipsum dolor
+                                                                sit
+                                                                amet.</h2>
+                                                            <div class="card-image hover-img mb-2">
+                                                                <img [src]="'assets/images/mega-menu/megamenu-1.png'"
+                                                                    width="100%" height="100%" alt="no image">
+                                                            </div>
+                                                            <div class="card-desc">
+                                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing
+                                                                    elit. Ex,
+                                                                    sequi iusto. Cupiditate explicabo itaque amet
+                                                                    mollitia.
+                                                                    Numquam
+                                                                    eum consequatur ipsum!</p>
+                                                                <a href="#" class="read-more">Read More <i
+                                                                        class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="megamenu-list">
+                                                            <ul>
+                                                                <li>
+                                                                    <h6 class="list-title hover-title">Lorem ipsum
+                                                                        dolor.</h6>
+                                                                    <p>Lorem ipsum dolor sit amet consectetur,
+                                                                        adipisicing elit. Impedit!</p>
+                                                                </li>
+                                                                <li>
+                                                                    <h6 class="list-title hover-title">Lorem ipsum
+                                                                        dolor.</h6>
+                                                                    <p>Lorem ipsum dolor sit amet consectetur,
+                                                                        adipisicing elit. Impedit!</p>
+                                                                </li>
+                                                                <li>
+                                                                    <h6 class="list-title hover-title">Lorem ipsum
+                                                                        dolor.</h6>
+                                                                    <p>Lorem ipsum dolor sit amet consectetur,
+                                                                        adipisicing elit. Impedit!</p>
+                                                                </li>
+                                                                <li>
+                                                                    <h6 class="list-title hover-title">Lorem ipsum
+                                                                        dolor.</h6>
+                                                                    <p>Lorem ipsum dolor sit amet consectetur,
+                                                                        adipisicing elit. Impedit!</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="megamenu-list">
+                                                            <ul>
+                                                                <li>
+                                                                    <h6 class="list-title hover-title">Lorem ipsum
+                                                                        dolor.</h6>
+                                                                    <p>Lorem ipsum dolor sit amet consectetur,
+                                                                        adipisicing elit. Impedit!</p>
+                                                                </li>
+                                                                <li>
+                                                                    <h6 class="list-title hover-title">Lorem ipsum
+                                                                        dolor.</h6>
+                                                                    <p>Lorem ipsum dolor sit amet consectetur,
+                                                                        adipisicing elit. Impedit!</p>
+                                                                </li>
+                                                                <li>
+                                                                    <h6 class="list-title hover-title">Lorem ipsum
+                                                                        dolor.</h6>
+                                                                    <p>Lorem ipsum dolor sit amet consectetur,
+                                                                        adipisicing elit. Impedit!</p>
+                                                                </li>
+                                                                <li>
+                                                                    <h6 class="list-title hover-title">Lorem ipsum
+                                                                        dolor.</h6>
+                                                                    <p>Lorem ipsum dolor sit amet consectetur,
+                                                                        adipisicing elit. Impedit!</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-template>
+                                    </li>
+                                </ul>
+                                <div [ngbNavOutlet]="nav2" class="mt-2"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -134,20 +374,109 @@
     <div class="mega-menu" [ngClass]="{'visible': isActive('resources'), 'hidden': !isActive('resources')}"
         (mouseenter)="cancelHideMenu()" (mouseleave)="scheduleHideMenu()">
         <div class="app-container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="megamenu-content">
-                        <h1>Resources</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto soluta et ipsam eum
-                            inventore. Repudiandae pariatur assumenda itaque omnis eos error debitis temporibus
-                            perspiciatis veniam?</p>
+            <div class="megamenu-wrapper">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="megamenu-content">
+                            <h1 class="mb-4">Resources</h1>
+                            <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto soluta
+                                et
+                                ipsam eum
+                                inventore. Repudiandae pariatur assumenda itaque omnis eos error debitis temporibus
+                                perspiciatis veniam?</p>
+                            <button class="btn-overlay">
+                                <span>Overview</span>
+                                <i class="fa-solid fa-angles-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="megamenu-content-wrapper">
+                            <div class="megamenu-tabs">
+                                <ul ngbNav #nav3="ngbNav" [(activeId)]="activeTab3" class="nav-tabs">
+                                    <li [ngbNavItem]="1">
+                                        <button ngbNavLink>About Us</button>
+                                        <ng-template ngbNavContent>
+                                            <div class="megamenu-hero">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="megamenu-card">
+                                                            <h2 class="card-title hover-title mb-3">Lorem ipsum dolor
+                                                                sit
+                                                                amet.</h2>
+                                                            <div class="card-image hover-img mb-2">
+                                                                <img [src]="'assets/images/mega-menu/megamenu-1.png'"
+                                                                    width="100%" height="100%" alt="no image">
+                                                            </div>
+                                                            <div class="card-desc">
+                                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing
+                                                                    elit. Ex,
+                                                                    sequi iusto. Cupiditate explicabo itaque amet
+                                                                    mollitia.
+                                                                    Numquam
+                                                                    eum consequatur ipsum!</p>
+                                                                <a href="#" class="read-more">Who we are <i
+                                                                        class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="megamenu-card">
+                                                            <h2 class="card-title hover-title mb-3">Lorem ipsum dolor
+                                                                sit
+                                                                amet.</h2>
+                                                            <div class="card-image hover-img mb-2">
+                                                                <img [src]="'assets/images/mega-menu/megamenu-1.png'"
+                                                                    width="100%" height="100%" alt="no image">
+                                                            </div>
+                                                            <div class="card-desc">
+                                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing
+                                                                    elit. Ex,
+                                                                    sequi iusto. Cupiditate explicabo itaque amet
+                                                                    mollitia.
+                                                                    Numquam
+                                                                    eum consequatur ipsum!</p>
+                                                                <a href="#" class="read-more">How we are <i
+                                                                        class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="megamenu-card border-0">
+                                                            <h2 class="card-title hover-title mb-3">Lorem ipsum dolor
+                                                                sit
+                                                                amet.</h2>
+                                                            <div class="card-image hover-img mb-2">
+                                                                <img [src]="'assets/images/mega-menu/megamenu-1.png'"
+                                                                    width="100%" height="100%" alt="no image">
+                                                            </div>
+                                                            <div class="card-desc">
+                                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing
+                                                                    elit. Ex,
+                                                                    sequi iusto. Cupiditate explicabo itaque amet
+                                                                    mollitia.
+                                                                    Numquam
+                                                                    eum consequatur ipsum!</p>
+                                                                <a href="#" class="read-more">Team Vision <i
+                                                                        class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-template>
+                                    </li>
+                                </ul>
+                                <div [ngbNavOutlet]="nav3" class="mt-2"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="mega-menu" [ngClass]="{'visible': isActive('blogs'), 'hidden': !isActive('blogs')}"
+    <!-- <div class="mega-menu" [ngClass]="{'visible': isActive('blogs'), 'hidden': !isActive('blogs')}"
         (mouseenter)="cancelHideMenu()" (mouseleave)="scheduleHideMenu()">
         <div class="app-container">
             <div class="row">
@@ -161,21 +490,181 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="mega-menu" [ngClass]="{'visible': isActive('contact'), 'hidden': !isActive('contact')}"
         (mouseenter)="cancelHideMenu()" (mouseleave)="scheduleHideMenu()">
         <div class="app-container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="megamenu-content">
-                        <h1>Contact Us</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto soluta et ipsam eum
-                            inventore. Repudiandae pariatur assumenda itaque omnis eos error debitis temporibus
-                            perspiciatis veniam?</p>
+            <div class="megamenu-wrapper">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="megamenu-content">
+                            <h1 class="mb-4">Contact Us</h1>
+                            <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto soluta
+                                et
+                                ipsam eum
+                                inventore. Repudiandae pariatur assumenda itaque omnis eos error debitis temporibus
+                                perspiciatis veniam?</p>
+                            <button class="btn-overlay">
+                                <span>Contact Us</span>
+                                <i class="fa-solid fa-angles-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="megamenu-content-wrapper">
+                            <div class="megamenu-tabs">
+                                <ul ngbNav #nav4="ngbNav" [(activeId)]="activeTab4" class="nav-tabs">
+                                    <li [ngbNavItem]="1">
+                                        <button ngbNavLink>About Us</button>
+                                        <ng-template ngbNavContent>
+                                            <div class="megamenu-hero">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="megamenu-card">
+                                                            <h2 class="card-title hover-title mb-3">Lorem ipsum dolor
+                                                                sit
+                                                                amet.</h2>
+                                                            <div class="card-image hover-img mb-2">
+                                                                <img [src]="'assets/images/mega-menu/megamenu-1.png'"
+                                                                    width="100%" height="100%" alt="no image">
+                                                            </div>
+                                                            <div class="card-desc">
+                                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing
+                                                                    elit. Ex,
+                                                                    sequi iusto. Cupiditate explicabo itaque amet
+                                                                    mollitia.
+                                                                    Numquam
+                                                                    eum consequatur ipsum!</p>
+                                                                <a href="#" class="read-more">Who we are <i
+                                                                        class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="megamenu-card">
+                                                            <h2 class="card-title hover-title mb-3">Lorem ipsum dolor
+                                                                sit
+                                                                amet.</h2>
+                                                            <div class="card-image hover-img mb-2">
+                                                                <img [src]="'assets/images/mega-menu/megamenu-1.png'"
+                                                                    width="100%" height="100%" alt="no image">
+                                                            </div>
+                                                            <div class="card-desc">
+                                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing
+                                                                    elit. Ex,
+                                                                    sequi iusto. Cupiditate explicabo itaque amet
+                                                                    mollitia.
+                                                                    Numquam
+                                                                    eum consequatur ipsum!</p>
+                                                                <a href="#" class="read-more">How we are <i
+                                                                        class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="megamenu-card border-0">
+                                                            <h2 class="card-title hover-title mb-3">Lorem ipsum dolor
+                                                                sit
+                                                                amet.</h2>
+                                                            <div class="card-image hover-img mb-2">
+                                                                <img [src]="'assets/images/mega-menu/megamenu-1.png'"
+                                                                    width="100%" height="100%" alt="no image">
+                                                            </div>
+                                                            <div class="card-desc">
+                                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing
+                                                                    elit. Ex,
+                                                                    sequi iusto. Cupiditate explicabo itaque amet
+                                                                    mollitia.
+                                                                    Numquam
+                                                                    eum consequatur ipsum!</p>
+                                                                <a href="#" class="read-more">Team Vision <i
+                                                                        class="fa-solid fa-arrow-right"></i></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ng-template>
+                                    </li>
+                                </ul>
+                                <div [ngbNavOutlet]="nav4" class="mt-2"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="mobile-menu" [ngClass]="{'active': isMobileMenuOpen}">
+        <div class="app-container">
+            <ul class="mobile-menu-links d-flex flex-column">
+                <li class="nav-item">
+                    <div class="nav-link">
+                        <a href="#">Home</a>
+                        <div class="icon-wrapper"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link" (click)="toggleDropdown('aboutUs')">
+                        <a href="#">About Us</a>
+                        <div class="show" *ngIf="openDropdown !== 'aboutUs'">
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                        <div class="hidden" *ngIf="openDropdown === 'aboutUs'">
+                            <i class="fa-solid fa-minus"></i>
+                        </div>
+                    </div>
+                    <ul class="dropdownmenu" [ngClass]="{'open': openDropdown === 'aboutUs'}">
+                        <li><a href="#">Who we are<i class="fa-solid fa-arrow-right"></i></a></li>
+                        <li><a href="#">How we work<i class="fa-solid fa-arrow-right"></i></a></li>
+                        <li><a href="#">Team vision<i class="fa-solid fa-arrow-right"></i></a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <div class="nav-link" (click)="toggleDropdown('services')">
+                        <a href="#">Services</a>
+                        <div class="show" *ngIf="openDropdown !== 'services'">
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                        <div class="hidden" *ngIf="openDropdown === 'services'">
+                            <i class="fa-solid fa-minus"></i>
+                        </div>
+                    </div>
+                    <ul class="dropdownmenu" [ngClass]="{'open': openDropdown === 'services'}">
+                        <li><a href="#">Who we are<i class="fa-solid fa-arrow-right"></i></a></li>
+                        <li><a href="#">How we work<i class="fa-solid fa-arrow-right"></i></a></li>
+                        <li><a href="#">Team vision<i class="fa-solid fa-arrow-right"></i></a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <div class="nav-link" (click)="toggleDropdown('resources')">
+                        <a href="#">Resources</a>
+                        <div class="show" *ngIf="openDropdown !== 'resources'">
+                            <i class="fa-solid fa-angle-down"></i>
+                        </div>
+                        <div class="hidden" *ngIf="openDropdown === 'resources'">
+                            <i class="fa-solid fa-minus"></i>
+                        </div>
+                    </div>
+                    <ul class="dropdownmenu" [ngClass]="{'open': openDropdown === 'resources'}">
+                        <li><a href="#">Who we are<i class="fa-solid fa-arrow-right"></i></a></li>
+                        <li><a href="#">How we work<i class="fa-solid fa-arrow-right"></i></a></li>
+                        <li><a href="#">Team vision<i class="fa-solid fa-arrow-right"></i></a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <div class="nav-link">
+                        <a href="#">Contact Us</a>
+                        <div class="icon-wrapper"><i class="fa-solid fa-arrow-right"></i></div>
+                    </div>
+                </li>
+
+            </ul>
         </div>
     </div>
 </header>

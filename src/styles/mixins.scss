@@ -4,3 +4,31 @@
   box-sizing: border-box;
   list-style: none;
 }
+
+@mixin hover-card {
+  .hover-title,
+  .hover-img,
+  .read-more,
+  i {
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+  }
+  &:hover {
+    .hover-title {
+      color: var(--primary);
+    }
+    .hover-img {
+      overflow: hidden;
+      img {
+        transform: scale(1.1);
+      }
+    }
+    .read-more {
+      color: var(--primary);
+      i {
+        color: var(--primary);
+        transform: translateX(5px);
+      }
+    }
+  }
+}

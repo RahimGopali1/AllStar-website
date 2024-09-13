@@ -1,7 +1,17 @@
+@import "../styles/mixins.scss";
+
 body {
   font-family: "Montserrat", sans-serif;
   background-color: var(--bg-1);
 }
 a {
   text-decoration: none;
+  color: var(--black);
+  font-weight: var(--fw-5);
+}
+p {
+  font-weight: var(--fw-5);
+}
+ul {
+  @include MarPad();
 }
