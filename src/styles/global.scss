@@ -1,0 +1,55 @@
+@import "../styles/mixins.scss";
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--bg-1);
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: var(--fw-5);
+}
+p {
+  font-weight: var(--fw-5);
+  color: var(--white);
+}
+ul {
+  @include MarPad();
+}
+
+.date-label {
+  font-size: 12px;
+  font-weight: var(--fw-5);
+  color: var(--text-color-1);
+}
+
+.title-label {
+  margin-bottom: 1rem;
+  span {
+    font-size: 16px;
+    color: var(--primary);
+    font-weight: var(--fw-5);
+    text-transform: uppercase;
+  }
+}
+.title-holder {
+  margin-bottom: 2rem;
+  h1 {
+    font-size: 54px;
+    font-weight: var(--fw-7);
+    color: var(--white);
+  }
+  @media screen and (max-width: 991px) {
+    h1 {
+      font-size: 38px;
+    }
+  }
+}
+
+.section-padding {
+  padding: 3.5rem 0;
+  @media screen and (max-width: 991px) {
+    padding: 1.5rem 0;
+  }
+}

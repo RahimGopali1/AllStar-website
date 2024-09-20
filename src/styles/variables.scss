@@ -1,0 +1,34 @@
+:root {
+  //font-weight;
+  --fw-2: 200;
+  --fw-3: 300;
+  --fw-4: 400;
+  --fw-5: 500;
+  --fw-6: 600;
+  --fw-7: 700;
+  --fw-8: 800;
+  --fw-9: 900;
+  //font-weight end;
+
+  // global colors
+  --bg-1: #0c0c0c;
+  --bg-2: #1d1d1d;
+  --blur-1: rgba(255, 116, 74, 0.5);
+  
+  --white: #fff;
+  --black: #000;
+
+  --text-color-1: #ff9f86;
+  --text-color-2: #4a4a4a;
+  --text-color-3: #272727;
+
+  --primary: #fe7f5a;
+
+  // global colors end
+
+  // gradients
+  --grad-1: linear-gradient(to right, #ff9747, #fd6d6a);
+  --grad-2: linear-gradient(180deg, transparent 0%, #ff9747 100%);
+  --grad-3: linear-gradient(180deg, transparent 0%, #fd6d6a 100%);
+  // gradients end
+}
